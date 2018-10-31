@@ -27,6 +27,7 @@
         <activity android:name=".activtiy.VitamioPlayerActivity"></activity>
         <activity android:name=".activtiy.AudioPlayerActivity"></activity>
         <service android:name=".service.AudioPlayService"></service>
+        <receiver android:name=".activtiy.AudioPlayerActivity$AudioBroadcastReceiver"></receiver>
     </application>
 
 </manifest>

@@ -20,6 +20,7 @@ public class AudioListAdapter extends CursorAdapter {
         super(context, c);
     }
 
+
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         return View.inflate(context, R.layout.adapter_audio_list,null);
@@ -42,7 +43,7 @@ public class AudioListAdapter extends CursorAdapter {
         if(viewHolder == null)
         {
             viewHolder = new ViewHolder(view);
-            view.setTag(view);
+            view.setTag(viewHolder);
         }
         return viewHolder;
     }
