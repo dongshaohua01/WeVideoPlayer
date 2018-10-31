@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+   <com.dsh.wevideoplayer.view.VideoView
+       android:layout_width="match_parent"
+       android:layout_height="250dp"
+       android:id="@+id/videoView"
+       android:layout_centerInParent="true"/>
+    <include layout="@layout/layout_top_control"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_bottom_control"
+        android:layout_alignParentBottom="true">
+        <include layout="@layout/layout_bottom_control"/>
+    </LinearLayout>
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="@drawable/bg_player_loading_background"
+         android:gravity="center"
+         android:id="@+id/ll_loading"
+         android:orientation="horizontal">
+         <ProgressBar
+             android:layout_width="25dp"
+             android:layout_height="25dp" />
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="18sp"
+             android:textColor="@color/white"
+             android:layout_marginLeft="8dp"
+             android:text="正在加载中..."/>
+     </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center"
+             android:id="@+id/ll_buffering"
+             android:visibility="gone"
+             android:orientation="horizontal">
+             <ProgressBar
+                 android:layout_width="25dp"
+                 android:layout_height="25dp" />
+         </LinearLayout>
+
+</RelativeLayout>
