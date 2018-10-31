@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".activtiy.VideoPlayerActivity"></activity>
         <activity android:name=".activtiy.VitamioPlayerActivity"></activity>
+        <activity android:name=".activtiy.AudioPlayerActivity"></activity>
+        <service android:name=".service.AudioPlayService"></service>
     </application>
 
 </manifest>

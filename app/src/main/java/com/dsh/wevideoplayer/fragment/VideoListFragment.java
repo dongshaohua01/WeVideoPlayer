@@ -55,7 +55,6 @@ public class VideoListFragment extends BaseFragment {
     protected void initDate() {
        adpter = new VideoListAdpter(getActivity(),null);
        listView.setAdapter(adpter);
-
        queryHandler = new SimpleQueryHandler(getActivity().getContentResolver());
        String[] projection = {MediaStore.Video.Media._ID, MediaStore.Video.Media.SIZE, MediaStore.Video.Media.DURATION, MediaStore.Video.Media.TITLE, MediaStore.Video.Media.DATA};
        queryHandler.startQuery(0,adpter, MediaStore.Video.Media.EXTERNAL_CONTENT_URI,projection, null, null, null);

@@ -30,6 +30,7 @@ import com.dsh.wevideoplayer.BaseActivity;
 import com.dsh.wevideoplayer.R;
 import com.dsh.wevideoplayer.bean.VideoItem;
 import com.dsh.wevideoplayer.util.LogUtil;
+import com.dsh.wevideoplayer.util.StatusBarUtil;
 import com.dsh.wevideoplayer.util.StringUtil;
 import com.dsh.wevideoplayer.view.VideoView;
 import com.nineoldandroids.animation.Animator;
@@ -90,6 +91,8 @@ public class VideoPlayerActivity extends BaseActivity {
     @Override
     public void initView() {
         setContentView(R.layout.activity_video_player);
+        //布局全屏,去状态栏
+        StatusBarUtil.fullScreen(this);
         videoView = (VideoView) findViewById(R.id.videoView);
         btn_exit = (ImageView) findViewById(R.id.btn_exit);
         btn_pre = (ImageView) findViewById(R.id.btn_pre);
