@@ -1,5 +1,6 @@
 package com.dsh.wevideoplayer.activtiy;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -16,7 +17,11 @@ import com.nineoldandroids.view.ViewPropertyAnimator;
 
 import java.util.ArrayList;
 
+import pub.devrel.easypermissions.EasyPermissions;
+
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
+
+    private static final int RC_WRITE_EXTERNAL_STORAGE = 0x114;
 
     private TextView tab_video, tab_audio;
     private View indicate_line;
@@ -31,11 +36,18 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         initView();
         initLinstener();
         initDate();
+        //检查权限
+        if (!EasyPermissions.hasPermissions(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            EasyPermissions
+                    .requestPermissions(this, getString(R.string.read),
+                            RC_WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE);
+        }
     }
 
 
     public void initView() {
         setContentView(R.layout.activity_main);
+        //设置状态栏颜色
         StatusBarUtil.setStatusBarColor(this,R.color.indicate_line);
         tab_video = (TextView) findViewById(R.id.tab_video);
         tab_audio = (TextView) findViewById(R.id.tab_audio);

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WeVideoPlayer</string>
     <string name="splash_music">好音乐,好心情</string>
+    <string name="read">此应用需要申请读写SD卡权限</string>
 </resources>
